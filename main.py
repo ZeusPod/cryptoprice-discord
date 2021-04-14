@@ -15,7 +15,7 @@ from threading import Timer
 
 def getprice():
     cg = CoinGeckoAPI()
-    coinsprice = cg.get_price(ids='bitcoin, ethereum, dogecoin' , vs_currencies='usd')
+    coinsprice = cg.get_price(ids='bitcoin, ethereum, dogecoin, tron, chainlink, tether, basic-attention-token, ripple, cardano, uniswap, binancecoin, monero, polkadot, litecion, bitcoin-cash ', vs_currencies='usd')
     print(coinsprice)
     #Save the data in a Json file 
     with open ('data.json' ,'w') as file:
@@ -104,5 +104,30 @@ async def preciodoge(ctx):
        embed.add_field(name="Dev", value="Jose Morales")
        embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/5/small/dogecoin.png?1547792256")
        await ctx.send(embed=embed)
+
+#tron price 
+
+@bot.command()
+async def preciotrx(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #btc price from jason
+       trx = obj['tron']
+       trxprice = trx['usd']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del TRX {trxprice}**", timestamp=datetime.datetime.utcnow(), Color=discord.Color.red())
+       embed.add_field(name="Fuente de precio", value="Powered by Coingecko")
+       embed.add_field(name="Dev", value="Jose Morales")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/1094/small/tron-logo.png?1547035066")
+       await ctx.send(embed=embed)
+
+
+
+
+
+
+
 
 bot.run('ODMxMTg2MjQ3OTI0ODQyNTI3.YHRkhA.jf-u-GFzImrYlD8o-yzF6IJD7sU')
