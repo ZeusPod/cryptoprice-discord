@@ -49,10 +49,12 @@ async def on_ready():
 @bot.command()
 async def comandos(ctx):
     embed = discord.Embed(title = f"{ctx.guild.name}", description="comandos para consultar las cotizaciones", timestamp=datetime.
-    datetime.utcnow(), Color=discord.Color.blue())
+    datetime.utcnow(), color=discord.Color.orange())
     embed.add_field(name="Consulta BTC", value=">preciobtc")
     embed.add_field(name="Consulta ETH", value=">precioeth")
     embed.add_field(name="Consulta DOG", value=">preciodoge")
+    embed.add_field(name="Consulta TRX", value=">preciotrx")
+    embed.add_field(name="Consulta Link", value=">preciochainlink")
     await ctx.send(embed=embed)
 
 #command BTC price
@@ -125,7 +127,7 @@ async def preciotrx(ctx):
        embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/1094/small/tron-logo.png?1547035066")
        await ctx.send(embed=embed)
 
-#
+#precio Chainlink 
 
 @bot.command()
 async def preciochainlink(ctx):
@@ -140,7 +142,7 @@ async def preciochainlink(ctx):
        embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del Chainlink {linkprice}**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_blue())
        embed.add_field(name="Fuente de precio", value="Powered by Coingecko")
        embed.add_field(name="Dev", value="Jose Morales")
-       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/1094/small/tron-logo.png?1547035066")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/877/small/chainlink-new-logo.png?1547034700")
        await ctx.send(embed=embed)
 
 
