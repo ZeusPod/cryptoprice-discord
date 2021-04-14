@@ -66,7 +66,7 @@ async def preciobtc(ctx):
        #btc price from jason
        btc = obj['bitcoin']
        precioBtc = btc['usd']
-       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del BTC {precioBtc}**", timestamp=datetime.datetime.utcnow(), Color=discord.Color.blue())
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del BTC {precioBtc}**", timestamp=datetime.datetime.utcnow(), color=discord.Color.gold())
        embed.add_field(name="Fuente de precio", value="Powered by Coingecko")
        embed.add_field(name="Dev", value="Jose Morales")
        embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579")
@@ -83,11 +83,13 @@ async def precioeth(ctx):
        #btc price from jason
        eth = obj['ethereum']
        ethprice = eth['usd']
-       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del Ethereum {ethprice}**", timestamp=datetime.datetime.utcnow(), Color=discord.Color.blue())
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del Ethereum {ethprice}**", timestamp=datetime.datetime.utcnow(), color=discord.Color.blue())
        embed.add_field(name="Fuente de precio", value="Powered by Coingecko")
        embed.add_field(name="Dev", value="Jose Morales")
        embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880")
        await ctx.send(embed=embed)
+
+#dogecoin price 
 
 @bot.command()
 async def preciodoge(ctx):
@@ -99,7 +101,7 @@ async def preciodoge(ctx):
        #btc price from jason
        doge = obj['dogecoin']
        dogeprice = doge['usd']
-       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del Dogecoin {dogeprice}**", timestamp=datetime.datetime.utcnow(), Color=discord.Color.blue())
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del Dogecoin {dogeprice}**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_gold())
        embed.add_field(name="Fuente de precio", value="Powered by Coingecko")
        embed.add_field(name="Dev", value="Jose Morales")
        embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/5/small/dogecoin.png?1547792256")
@@ -117,7 +119,25 @@ async def preciotrx(ctx):
        #btc price from jason
        trx = obj['tron']
        trxprice = trx['usd']
-       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del TRX {trxprice}**", timestamp=datetime.datetime.utcnow(), Color=discord.Color.red())
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del TRX {trxprice}**", timestamp=datetime.datetime.utcnow(), color=discord.Color.red())
+       embed.add_field(name="Fuente de precio", value="Powered by Coingecko")
+       embed.add_field(name="Dev", value="Jose Morales")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/1094/small/tron-logo.png?1547035066")
+       await ctx.send(embed=embed)
+
+#
+
+@bot.command()
+async def preciochainlink(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #btc price from jason
+       link = obj['chainlink']
+       linkprice = link['usd']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del Chainlink {linkprice}**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_blue())
        embed.add_field(name="Fuente de precio", value="Powered by Coingecko")
        embed.add_field(name="Dev", value="Jose Morales")
        embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/1094/small/tron-logo.png?1547035066")
