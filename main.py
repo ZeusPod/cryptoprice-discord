@@ -15,7 +15,7 @@ from threading import Timer
 
 def getprice():
     cg = CoinGeckoAPI()
-    coinsprice = cg.get_price(ids='bitcoin, ethereum, dogecoin, tron, chainlink, tether, basic-attention-token, ripple, cardano, uniswap, binancecoin, monero, polkadot, litecion, bitcoin-cash ', vs_currencies='usd', include_market_cap='true')
+    coinsprice = cg.get_price(ids='bitcoin, ethereum, dogecoin, tron, chainlink, tether, basic-attention-token, ripple, cardano, uniswap, binancecoin, monero, polkadot, litecion, bitcoin-cash ', vs_currencies='usd', include_market_cap='true', include_24hr_vol='true')
     print(coinsprice)
     #Save the data in a Json file 
     with open ('data.json' ,'w') as file:
