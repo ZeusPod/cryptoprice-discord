@@ -71,10 +71,10 @@ async def preciobtc(ctx):
        btcmktcap = btc['usd_market_cap']
        vol_hrs = btc['usd_24h_vol']
        embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del BTC {precioBtc}**", timestamp=datetime.datetime.utcnow(), color=discord.Color.gold())
-       embed.add_field(name="Capitalizacion de mercado", value =btcmktcap)
-       embed.add_field(name="Volumen en 24hrs", value =vol_hrs)
-       embed.add_field(name="Fuente de precio", value="Powered by Coingecko")
-       embed.add_field(name="Dev", value="Jose Morales")
+       embed.add_field(name="**Market cap**", value =btcmktcap)
+       embed.add_field(name="**Vol last 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
        embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579")
        await ctx.send(embed=embed)
 
@@ -92,10 +92,10 @@ async def precioeth(ctx):
        ethmktcap = eth['usd_market_cap']
        vol_hrs = eth['usd_24h_vol']
        embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del Ethereum {ethprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.blue())
-       embed.add_field(name="Capitalizacion de mercado", value =ethmktcap)
-       embed.add_field(name="Volumen en 24hrs", value =vol_hrs)
-       embed.add_field(name="Fuente de precio", value="Powered by Coingecko")
-       embed.add_field(name="Dev", value="Jose Morales")
+       embed.add_field(name="**Market cap**", value =ethmktcap)
+       embed.add_field(name="**Vol last 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
        embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/279/small/ethereum.png?1595348880")
        await ctx.send(embed=embed)
 
@@ -114,10 +114,10 @@ async def preciodoge(ctx):
        dogemktcap = doge['usd_market_cap']
        vol_hrs = doge['usd_24h_vol']
        embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del Dogecoin {dogeprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_gold())
-       embed.add_field(name="Capitalizacion de mercado", value =dogemktcap)
-       embed.add_field(name="Volumen en 24hrs", value =vol_hrs)
-       embed.add_field(name="Fuente de precio", value="Powered by Coingecko")
-       embed.add_field(name="Dev", value="Jose Morales")
+       embed.add_field(name="**Market cap**", value =dogemktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
        embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/5/small/dogecoin.png?1547792256")
        await ctx.send(embed=embed)
 
@@ -136,10 +136,10 @@ async def preciotrx(ctx):
        trxmktcap = trx['usd_market_cap']
        vol_hrs = trx['usd_24h_vol']
        embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del TRX {trxprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.red())
-       embed.add_field(name="Capitalizacion de mercado", value =trxmktcap)
-       embed.add_field(name="Volumen en 24hrs", value =vol_hrs)
-       embed.add_field(name="Fuente de precio", value="Powered by Coingecko")
-       embed.add_field(name="Dev", value="Jose Morales")
+       embed.add_field(name="**Market cap**", value =trxmktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
        embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/1094/small/tron-logo.png?1547035066")
        await ctx.send(embed=embed)
 
@@ -158,10 +158,10 @@ async def preciochainlink(ctx):
        linkmktcap = link['usd_market_cap']
        vol_hrs= link['usd_24h_vol']
        embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del Chainlink {linkprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_blue())
-       embed.add_field(name="Capitalizacion de mercado", value =linkmktcap)
-       embed.add_field(name="Volumen en 24hrs", value =vol_hrs)
-       embed.add_field(name="Fuente de precio", value="Powered by Coingecko")
-       embed.add_field(name="Dev", value="Jose Morales")
+       embed.add_field(name="**Market cap**", value =linkmktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
        embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/877/small/chainlink-new-logo.png?1547034700")
        await ctx.send(embed=embed)
 
