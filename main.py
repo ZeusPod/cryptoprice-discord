@@ -69,7 +69,7 @@ async def preciobtc(ctx):
        btc = obj['bitcoin']
        precioBtc = btc['usd']
        btcmktcap = btc['usd_market_cap']
-       vol_hrs = btc['usd_24h_change']
+       vol_hrs = btc['usd_24h_vol']
        embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del BTC {precioBtc}**", timestamp=datetime.datetime.utcnow(), color=discord.Color.gold())
        embed.add_field(name="Capitalizacion de mercado", value =btcmktcap)
        embed.add_field(name="Volumen en 24hrs", value =vol_hrs)
@@ -90,7 +90,7 @@ async def precioeth(ctx):
        eth = obj['ethereum']
        ethprice = eth['usd']
        ethmktcap = eth['usd_market_cap']
-       vol_hrs = eth['usd_24h_change']
+       vol_hrs = eth['usd_24h_vol']
        embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del Ethereum {ethprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.blue())
        embed.add_field(name="Capitalizacion de mercado", value =ethmktcap)
        embed.add_field(name="Volumen en 24hrs", value =vol_hrs)
@@ -112,7 +112,7 @@ async def preciodoge(ctx):
        doge = obj['dogecoin']
        dogeprice = doge['usd']
        dogemktcap = doge['usd_market_cap']
-       vol_hrs = doge['usd_24h_change']
+       vol_hrs = doge['usd_24h_vol']
        embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del Dogecoin {dogeprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_gold())
        embed.add_field(name="Capitalizacion de mercado", value =dogemktcap)
        embed.add_field(name="Volumen en 24hrs", value =vol_hrs)
@@ -156,7 +156,7 @@ async def preciochainlink(ctx):
        link = obj['chainlink']
        linkprice = link['usd']
        linkmktcap = link['usd_market_cap']
-       vol_hrs= link['usd_24h_change']
+       vol_hrs= link['usd_24h_vol']
        embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del Chainlink {linkprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_blue())
        embed.add_field(name="Capitalizacion de mercado", value =linkmktcap)
        embed.add_field(name="Volumen en 24hrs", value =vol_hrs)
