@@ -86,7 +86,7 @@ async def precioeth(ctx):
        jsondata = coinsfile.read()
        #parser
        obj = json.loads(jsondata)
-       #btc price from jason
+       #ethreum price from jason
        eth = obj['ethereum']
        ethprice = eth['usd']
        ethmktcap = eth['usd_market_cap']
@@ -108,7 +108,7 @@ async def preciodoge(ctx):
        jsondata = coinsfile.read()
        #parser
        obj = json.loads(jsondata)
-       #btc price from jason
+       #tron price from jason
        doge = obj['dogecoin']
        dogeprice = doge['usd']
        dogemktcap = doge['usd_market_cap']
@@ -152,7 +152,7 @@ async def preciochainlink(ctx):
        jsondata = coinsfile.read()
        #parser
        obj = json.loads(jsondata)
-       #btc price from jason
+       #Chainlink price from jason
        link = obj['chainlink']
        linkprice = link['usd']
        linkmktcap = link['usd_market_cap']
@@ -165,11 +165,72 @@ async def preciochainlink(ctx):
        embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/877/small/chainlink-new-logo.png?1547034700")
        await ctx.send(embed=embed)
 
+#tether
+@bot.command()
+async def preciotether(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #theter price from jason
+       tether = obj['tether']
+       tetherprice = tether['usd']
+       tethermktcap = tether['usd_market_cap']
+       vol_hrs= tether['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de Tether {tetherprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.green())
+       embed.add_field(name="**Market cap**", value =tethermktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/325/small/Tether-logo.png?1598003707")
+       await ctx.send(embed=embed)
 
 
+#Precio del Bat
+
+@bot.command()
+async def preciobat(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #bat price from jason
+       bat= obj['basic-attention-token']
+       batprice = bat['usd']
+       batmktcap = bat['usd_market_cap']
+       vol_hrs= bat['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del BAT  {batprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_red())
+       embed.add_field(name="**Market cap**", value = batmktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/677/small/basic-attention-token.png?1547034427")
+       await ctx.send(embed=embed)
 
 
+#Precio de ripple
 
+@bot.command()
+async def precioxrp(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #xrp price from jason
+       xrp = obj['ripple']
+       xrpprice = xrp['usd']
+       xrpmktcap = xrp['usd_market_cap']
+       vol_hrs= xrp['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del XRP {xrpprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_blue())
+       embed.add_field(name="**Market cap**", value = xrpmktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/44/small/xrp-symbol-white-128.png?1605778731")
+       await ctx.send(embed=embed)
 
 
 bot.run('ODMxMTg2MjQ3OTI0ODQyNTI3.YHRkhA.jf-u-GFzImrYlD8o-yzF6IJD7sU')
