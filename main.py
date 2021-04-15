@@ -15,7 +15,7 @@ from threading import Timer
 
 def getprice():
     cg = CoinGeckoAPI()
-    coinsprice = cg.get_price(ids='bitcoin, ethereum, dogecoin, tron, chainlink, tether, basic-attention-token, ripple, cardano, uniswap, binancecoin, monero, polkadot, litecion, bitcoin-cash ', vs_currencies='usd')
+    coinsprice = cg.get_price(ids='bitcoin, ethereum, dogecoin, tron, chainlink, tether, basic-attention-token, ripple, cardano, uniswap, binancecoin, monero, polkadot, litecion, bitcoin-cash ', vs_currencies='usd', include_market_cap='true')
     print(coinsprice)
     #Save the data in a Json file 
     with open ('data.json' ,'w') as file:
@@ -139,7 +139,9 @@ async def preciochainlink(ctx):
        #btc price from jason
        link = obj['chainlink']
        linkprice = link['usd']
+       linkmktcap = link['usd_market_cap']
        embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del Chainlink {linkprice}**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_blue())
+       embed.add_field(name="Capitalizacion de mercado", value =linkmktcap)
        embed.add_field(name="Fuente de precio", value="Powered by Coingecko")
        embed.add_field(name="Dev", value="Jose Morales")
        embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/877/small/chainlink-new-logo.png?1547034700")
