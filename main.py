@@ -232,5 +232,50 @@ async def precioxrp(ctx):
        embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/44/small/xrp-symbol-white-128.png?1605778731")
        await ctx.send(embed=embed)
 
+#precio cardano
+
+@bot.command()
+async def preciocardano(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #xrp price from jason
+       car = obj['cardano']
+       cardanoprice = car['usd']
+       cardanomktcap = car['usd_market_cap']
+       vol_hrs= car['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de Cardano {cardanoprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_blue())
+       embed.add_field(name="**Market cap**", value = cardanomktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/975/small/cardano.png?1547034860")
+       await ctx.send(embed=embed)
+
+
+#precio uniswap
+
+@bot.command()
+async def preciouniswap(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #uniswap price from json
+       uni = obj['uniswap']
+       uniswapprice = uni['usd']
+       uniswapmktcap = uni['usd_market_cap']
+       vol_hrs= uni['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de Uniswap {uniswapprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.DARK_VIVID_PINK())
+       embed.add_field(name="**Market cap**", value = uniswapmktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/12504/small/uniswap-uni.png?1600306604")
+       await ctx.send(embed=embed)
+
 
 bot.run('ODMxMTg2MjQ3OTI0ODQyNTI3.YHRkhA.jf-u-GFzImrYlD8o-yzF6IJD7sU')
