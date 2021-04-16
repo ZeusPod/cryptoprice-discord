@@ -269,7 +269,7 @@ async def preciouniswap(ctx):
        uniswapprice = uni['usd']
        uniswapmktcap = uni['usd_market_cap']
        vol_hrs= uni['usd_24h_vol']
-       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de Uniswap {uniswapprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.DARK_VIVID_PINK())
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de Uniswap {uniswapprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.purple())
        embed.add_field(name="**Market cap**", value = uniswapmktcap)
        embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
        embed.add_field(name="Font", value="Coingecko")
