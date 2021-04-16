@@ -361,7 +361,7 @@ async def preciolitecoin(ctx):
        embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
        embed.add_field(name="Font", value="Coingecko")
        embed.add_field(name="Developer", value="**Jose Morales**")
-       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/12171/small/aJGBjJFU_400x400.jpg?1597804776")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/2/small/litecoin.png?1547033580")
        await ctx.send(embed=embed)
 
 
@@ -378,7 +378,7 @@ async def preciobch(ctx):
        bchprice = bch['usd']
        bchmktcap = bch['usd_market_cap']
        vol_hrs= bch['usd_24h_vol']
-       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de bitcoin cash {bchprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.light_grey())
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de Bitcoin Cash {bchprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.green())
        embed.add_field(name="**Market cap**", value = bchmktcap)
        embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
        embed.add_field(name="Font", value="Coingecko")
