@@ -15,7 +15,7 @@ from threading import Timer
 
 def getprice():
     cg = CoinGeckoAPI()
-    coinsprice = cg.get_price(ids='bitcoin, ethereum, dogecoin, tron, chainlink, tether, basic-attention-token, ripple, cardano, uniswap, binancecoin, monero, polkadot, litecoin, bitcoin-cash, pancakeswap-token,helmet-insure,1inch,belt,tokocrypto, stellar,ubix-network, vechain ', vs_currencies='usd', include_market_cap='true', include_24hr_vol='true')
+    coinsprice = cg.get_price(ids='bitcoin, ethereum, dogecoin, tron, chainlink, tether, basic-attention-token, ripple, cardano, uniswap, binancecoin, monero, polkadot, litecoin, bitcoin-cash, pancakeswap-token,helmet-insure,1inch,belt,tokocrypto, stellar,ubix-network, vechain,theta-token, filecoin, usd-coin, wrapped-bitcoin, eos, bitcoin-cash-sv', vs_currencies='usd', include_market_cap='true', include_24hr_vol='true')
     print(coinsprice)
     #Save the data in a Json file 
     with open ('data.json' ,'w') as file:
@@ -557,6 +557,115 @@ async def preciovechain(ctx):
        embed.add_field(name="Font", value="Coingecko")
        embed.add_field(name="Developer", value="**Jose Morales**")
        embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/1167/small/VeChain-Logo-768x725.png?1547035194")
+       await ctx.send(embed=embed)
+
+
+#theta-token price
+@bot.command()
+async def preciotheta(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #theta-token price from json
+       theta = obj['theta-token']
+       thetaprice = theta['usd']
+       thetamktcap = theta['usd_market_cap']
+       vol_hrs= theta['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de Theta {thetaprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.blue())
+       embed.add_field(name="**Market cap**", value = thetamktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/2538/small/theta-token-logo.png?1548387191")
+       await ctx.send(embed=embed)
+
+
+#filecoin
+@bot.command()
+async def preciofilecoin(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #filecoin price from json
+       file = obj['filecoin']
+       fileprice = file['usd']
+       filemktcap = file['usd_market_cap']
+       vol_hrs= file['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de Filecoin {fileprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.blue())
+       embed.add_field(name="**Market cap**", value = filemktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/12817/small/filecoin.png?1602753933")
+       await ctx.send(embed=embed)
+
+#wrapped-bitcoin
+@bot.command()
+async def preciowbitcoin(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #wrapped-bitcoin price from json
+       wbitcoin = obj['wrapped-bitcoin']
+       wbitcoinprice = wbitcoin['usd']
+       wbitcoinmktcap = wbitcoin['usd_market_cap']
+       vol_hrs= wbitcoin['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de wrapped-bitcoin {wbitcoinprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.orange())
+       embed.add_field(name="**Market cap**", value = wbitcoinmktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/7598/small/wrapped_bitcoin_wbtc.png?1548822744")
+       await ctx.send(embed=embed)
+
+
+#eos
+@bot.command()
+async def precioeos(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #eos from json
+       eoscoin = obj['eos']
+       wbiteosprice = eoscoin['usd']
+       wbiteosmktcap = eoscoin['usd_market_cap']
+       vol_hrs= eoscoin['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de Eos {wbiteosprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.orange())
+       embed.add_field(name="**Market cap**", value = wbiteosmktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/738/small/eos-eos-logo.png?1547034481")
+       await ctx.send(embed=embed)
+
+
+#bitcoin-cash-sv
+@bot.command()
+async def preciobsv(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #bsv from json
+       bsvcoin = obj['bitcoin-cash-sv']
+       bsvprice = bsvcoin['usd']
+       bsvmktcap = bsvcoin['usd_market_cap']
+       vol_hrs= bsvcoin['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de Bsv {bsvprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.orange())
+       embed.add_field(name="**Market cap**", value = bsvmktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/6799/small/BSV.png?1558947902")
        await ctx.send(embed=embed)
 
 
