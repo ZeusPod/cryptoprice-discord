@@ -15,7 +15,7 @@ from threading import Timer
 
 def getprice():
     cg = CoinGeckoAPI()
-    coinsprice = cg.get_price(ids='bitcoin, ethereum, dogecoin, tron, chainlink, tether, basic-attention-token, ripple, cardano, uniswap, binancecoin, monero, polkadot, litecoin, bitcoin-cash, pancakeswap-token,helmet-insure,1inch,belt,tokocrypto', vs_currencies='usd', include_market_cap='true', include_24hr_vol='true')
+    coinsprice = cg.get_price(ids='bitcoin, ethereum, dogecoin, tron, chainlink, tether, basic-attention-token, ripple, cardano, uniswap, binancecoin, monero, polkadot, litecoin, bitcoin-cash, pancakeswap-token,helmet-insure,1inch,belt,tokocrypto, stellar,ubix-network, vechain ', vs_currencies='usd', include_market_cap='true', include_24hr_vol='true')
     print(coinsprice)
     #Save the data in a Json file 
     with open ('data.json' ,'w') as file:
@@ -46,6 +46,7 @@ bot = commands.Bot(command_prefix='>')
 async def on_ready():
     print('Bot activo')
 
+#comandos para solicitar precios
 @bot.command()
 async def comandos(ctx):
     embed = discord.Embed(title = f"{ctx.guild.name}", description="comandos para consultar las cotizaciones", timestamp=datetime.
@@ -492,6 +493,70 @@ async def preciotko(ctx):
        embed.add_field(name="Font", value="Coingecko")
        embed.add_field(name="Developer", value="**Jose Morales**")
        embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/14577/small/tko-logo.png?1617093467")
+       await ctx.send(embed=embed)
+
+#UBX ubix-network
+@bot.command()
+async def precioubx(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #belt price from json
+       ubx = obj['ubix-network']
+       ubxprice = ubx['usd']
+       ubxmktcap = ubx['usd_market_cap']
+       vol_hrs= ubx['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de Ubx {ubxprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_theme())
+       embed.add_field(name="**Market cap**", value = ubxmktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/13000/small/UBIX.png?1604281998?1617093467")
+       await ctx.send(embed=embed)
+
+
+#stellar price
+@bot.command()
+async def preciostellar(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #stellar price from json
+       stl = obj['stellar']
+       stlprice = stl['usd']
+       stlmktcap = stl['usd_market_cap']
+       vol_hrs= stl['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de Stellar {stlprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.darker_grey())
+       embed.add_field(name="**Market cap**", value = stlmktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/100/small/Stellar_symbol_black_RGB.png?1552356157")
+       await ctx.send(embed=embed)
+
+#price vechain
+@bot.command()
+async def preciovechain(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #vechain price from json
+       vech = obj['vechain']
+       vechprice = vech['usd']
+       vechmktcap = vech['usd_market_cap']
+       vol_hrs= vech['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de Vechain {vechprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.blue())
+       embed.add_field(name="**Market cap**", value = vechmktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/1167/small/VeChain-Logo-768x725.png?1547035194")
        await ctx.send(embed=embed)
 
 
