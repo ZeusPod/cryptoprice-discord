@@ -15,7 +15,7 @@ from threading import Timer
 
 def getprice():
     cg = CoinGeckoAPI()
-    coinsprice = cg.get_price(ids='bitcoin, ethereum, dogecoin, tron, chainlink, tether, basic-attention-token, ripple, cardano, uniswap, binancecoin, monero, polkadot, litecion, bitcoin-cash ', vs_currencies='usd', include_market_cap='true', include_24hr_vol='true')
+    coinsprice = cg.get_price(ids='bitcoin, ethereum, dogecoin, tron, chainlink, tether, basic-attention-token, ripple, cardano, uniswap, binancecoin, monero, polkadot, litecoin, bitcoin-cash ', vs_currencies='usd', include_market_cap='true', include_24hr_vol='true')
     print(coinsprice)
     #Save the data in a Json file 
     with open ('data.json' ,'w') as file:
@@ -70,7 +70,7 @@ async def preciobtc(ctx):
        precioBtc = btc['usd']
        btcmktcap = btc['usd_market_cap']
        vol_hrs = btc['usd_24h_vol']
-       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del BTC {precioBtc}**", timestamp=datetime.datetime.utcnow(), color=discord.Color.gold())
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio del BTC {precioBtc} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.gold())
        embed.add_field(name="**Market cap**", value =btcmktcap)
        embed.add_field(name="**Vol last 24hrs**", value =vol_hrs)
        embed.add_field(name="Font", value="Coingecko")
@@ -275,6 +275,115 @@ async def preciouniswap(ctx):
        embed.add_field(name="Font", value="Coingecko")
        embed.add_field(name="Developer", value="**Jose Morales**")
        embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/12504/small/uniswap-uni.png?1600306604")
+       await ctx.send(embed=embed)
+
+#precio binancecoin
+@bot.command()
+async def preciobnb(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #binancecoin price from json
+       bnb = obj['binancecoin']
+       bnbprice = bnb['usd']
+       bnbmktcap = bnb['usd_market_cap']
+       vol_hrs= bnb['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de BNB {bnbprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_gold())
+       embed.add_field(name="**Market cap**", value = bnbmktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/825/small/binance-coin-logo.png?1547034615")
+       await ctx.send(embed=embed)
+
+
+#precio monero
+@bot.command()
+async def preciomonero(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #monero price from json
+       mon = obj['monero']
+       moneroprice = mon['usd']
+       moneromktcap = mon['usd_market_cap']
+       vol_hrs= mon['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de Monero {moneroprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.orange())
+       embed.add_field(name="**Market cap**", value = moneromktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/69/small/monero_logo.png?1547033729")
+       await ctx.send(embed=embed)
+
+
+#precio polkadot
+@bot.command()
+async def preciomonero(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #polkadot price from json
+       polka = obj['polkadot']
+       polkaprice = polka['usd']
+       polkamktcap = polka['usd_market_cap']
+       vol_hrs= polka['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de Polkadot {polkaprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.orange())
+       embed.add_field(name="**Market cap**", value = polkamktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/12171/small/aJGBjJFU_400x400.jpg?1597804776")
+       await ctx.send(embed=embed)
+
+
+#precio litecoin
+@bot.command()
+async def preciolitecoin(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #litecoin price from json
+       lite = obj['litecoin']
+       liteprice = lite['usd']
+       litemktcap = lite['usd_market_cap']
+       vol_hrs= lite['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de Litecoin {liteprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.light_grey())
+       embed.add_field(name="**Market cap**", value = litemktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/12171/small/aJGBjJFU_400x400.jpg?1597804776")
+       await ctx.send(embed=embed)
+
+
+#precio bitcoin-cash
+@bot.command()
+async def preciobch(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #bitcoin-cash price from json
+       bch = obj['bitcoin-cash']
+       bchprice = bch['usd']
+       bchmktcap = bch['usd_market_cap']
+       vol_hrs= bch['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de bitcoin cash {bchprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.light_grey())
+       embed.add_field(name="**Market cap**", value = bchmktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/780/small/bitcoin-cash-circle.png?1594689492")
        await ctx.send(embed=embed)
 
 
