@@ -399,7 +399,7 @@ async def preciocake(ctx):
        cakeprice = cake['usd']
        cakemktcap = cake['usd_market_cap']
        vol_hrs= cake['usd_24h_vol']
-       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de pancakeswap-token {cakeprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.magenta())
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de pancakeswap-token   {cakeprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.magenta())
        embed.add_field(name="**Market cap**", value = cakemktcap)
        embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
        embed.add_field(name="Font", value="Coingecko")
@@ -421,7 +421,7 @@ async def preciohelmet(ctx):
        helmetprice = helmet['usd']
        helmetmktcap = helmet['usd_market_cap']
        vol_hrs= helmet['usd_24h_vol']
-       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de helmet-insure{helmetprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_gold())
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de helmet-insure  {helmetprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_gold())
        embed.add_field(name="**Market cap**", value = helmetmktcap)
        embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
        embed.add_field(name="Font", value="Coingecko")
@@ -443,7 +443,7 @@ async def precio1inch(ctx):
        inchprice = inch['usd']
        inchmktcap = inch['usd_market_cap']
        vol_hrs= inch['usd_24h_vol']
-       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de 1inch{inchprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_blue())
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de 1inch {inchprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_blue())
        embed.add_field(name="**Market cap**", value = inchmktcap)
        embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
        embed.add_field(name="Font", value="Coingecko")
@@ -465,7 +465,7 @@ async def preciobelt(ctx):
        beltprice = belt['usd']
        beltmktcap = belt['usd_market_cap']
        vol_hrs= belt['usd_24h_vol']
-       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de belt{beltprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_blue())
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de belt {beltprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_blue())
        embed.add_field(name="**Market cap**", value = beltmktcap)
        embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
        embed.add_field(name="Font", value="Coingecko")
@@ -486,7 +486,7 @@ async def preciotko(ctx):
        tkoprice = tko['usd']
        tkomktcap = tko['usd_market_cap']
        vol_hrs= tko['usd_24h_vol']
-       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de tokocrypto{tkoprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_green())
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de tokocrypto {tkoprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_green())
        embed.add_field(name="**Market cap**", value = tkomktcap)
        embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
        embed.add_field(name="Font", value="Coingecko")
