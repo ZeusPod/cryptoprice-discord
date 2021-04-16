@@ -638,7 +638,7 @@ async def precioeos(ctx):
        wbiteosprice = eoscoin['usd']
        wbiteosmktcap = eoscoin['usd_market_cap']
        vol_hrs= eoscoin['usd_24h_vol']
-       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de Eos {wbiteosprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.orange())
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de Eos {wbiteosprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_gray())
        embed.add_field(name="**Market cap**", value = wbiteosmktcap)
        embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
        embed.add_field(name="Font", value="Coingecko")
@@ -666,6 +666,27 @@ async def preciobsv(ctx):
        embed.add_field(name="Font", value="Coingecko")
        embed.add_field(name="Developer", value="**Jose Morales**")
        embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/6799/small/BSV.png?1558947902")
+       await ctx.send(embed=embed)
+
+#preciousdc
+@bot.command()
+async def preciousdc(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #USDC from json
+       usdccoin = obj['usd-coin']
+       usdcprice = usdccoin['usd']
+       usdcmktcap = usdccoin['usd_market_cap']
+       vol_hrs= usdccoin['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de USDC {usdcprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.blue())
+       embed.add_field(name="**Market cap**", value = usdcmktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/6319/small/USD_Coin_icon.png?1547042389")
        await ctx.send(embed=embed)
 
 
