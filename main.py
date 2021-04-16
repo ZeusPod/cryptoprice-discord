@@ -15,7 +15,7 @@ from threading import Timer
 
 def getprice():
     cg = CoinGeckoAPI()
-    coinsprice = cg.get_price(ids='bitcoin, ethereum, dogecoin, tron, chainlink, tether, basic-attention-token, ripple, cardano, uniswap, binancecoin, monero, polkadot, litecoin, bitcoin-cash ', vs_currencies='usd', include_market_cap='true', include_24hr_vol='true')
+    coinsprice = cg.get_price(ids='bitcoin, ethereum, dogecoin, tron, chainlink, tether, basic-attention-token, ripple, cardano, uniswap, binancecoin, monero, polkadot, litecoin, bitcoin-cash, pancakeswap-token,helmet-insure,1inch,belt,tokocrypto', vs_currencies='usd', include_market_cap='true', include_24hr_vol='true')
     print(coinsprice)
     #Save the data in a Json file 
     with open ('data.json' ,'w') as file:
@@ -385,6 +385,115 @@ async def preciobch(ctx):
        embed.add_field(name="Developer", value="**Jose Morales**")
        embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/780/small/bitcoin-cash-circle.png?1594689492")
        await ctx.send(embed=embed)
+
+#pancakeswap-token
+@bot.command()
+async def preciocake(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #bitcoin-cash price from json
+       cake = obj['pancakeswap-token']
+       cakeprice = cake['usd']
+       cakemktcap = cake['usd_market_cap']
+       vol_hrs= cake['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de pancakeswap-token {cakeprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.magenta())
+       embed.add_field(name="**Market cap**", value = cakemktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/12632/small/IMG_0440.PNG?1602654093")
+       await ctx.send(embed=embed)
+
+
+#helmet-insure
+@bot.command()
+async def preciohelmet(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #helmet-insure price from json
+       helmet = obj['helmet-insure']
+       helmetprice = helmet['usd']
+       helmetmktcap = helmet['usd_market_cap']
+       vol_hrs= helmet['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de helmet-insure{helmetprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_gold())
+       embed.add_field(name="**Market cap**", value = helmetmktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/13680/small/ZMdK-1J4_400x400.png?1610834469")
+       await ctx.send(embed=embed)
+
+
+#1inch
+@bot.command()
+async def precio1inch(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #1inch price from json
+       inch = obj['1inch']
+       inchprice = inch['usd']
+       inchmktcap = inch['usd_market_cap']
+       vol_hrs= inch['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de 1inch{inchprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_blue())
+       embed.add_field(name="**Market cap**", value = inchmktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/13469/small/1inch-token.png?1608803028")
+       await ctx.send(embed=embed)
+
+
+#belt
+@bot.command()
+async def preciobelt(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #belt price from json
+       belt = obj['belt']
+       beltprice = belt['usd']
+       beltmktcap = belt['usd_market_cap']
+       vol_hrs= belt['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de belt{beltprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_blue())
+       embed.add_field(name="**Market cap**", value = beltmktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/14319/small/belt_logo.jpg?1615387083")
+       await ctx.send(embed=embed)
+
+#tokocrypto
+@bot.command()
+async def preciotko(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #belt price from json
+       tko = obj['tokocrypto']
+       tkoprice = tko['usd']
+       tkomktcap = tko['usd_market_cap']
+       vol_hrs= tko['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de tokocrypto{tkoprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_green())
+       embed.add_field(name="**Market cap**", value = tkomktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/14577/small/tko-logo.png?1617093467")
+       await ctx.send(embed=embed)
+
 
 
 bot.run('ODMxMTg2MjQ3OTI0ODQyNTI3.YHRkhA.jf-u-GFzImrYlD8o-yzF6IJD7sU')
