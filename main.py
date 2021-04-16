@@ -323,7 +323,7 @@ async def preciomonero(ctx):
 
 #precio polkadot
 @bot.command()
-async def preciomonero(ctx):
+async def preciopolkadot(ctx):
        #read json file 
        coinsfile = open ('data.json', 'r') 
        jsondata = coinsfile.read()
@@ -334,7 +334,7 @@ async def preciomonero(ctx):
        polkaprice = polka['usd']
        polkamktcap = polka['usd_market_cap']
        vol_hrs= polka['usd_24h_vol']
-       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de Polkadot {polkaprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.orange())
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de Polkadot {polkaprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_gray())
        embed.add_field(name="**Market cap**", value = polkamktcap)
        embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
        embed.add_field(name="Font", value="Coingecko")
