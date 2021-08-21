@@ -1,77 +1,192 @@
 {
-   "bitcoin": {
-      "usd": 63001,
-      "usd_market_cap": 1176890571554.8086,
-      "usd_24h_vol": 61647576095.88856
+   "binancecoin": {
+      "usd": 454.56,
+      "usd_market_cap": 70472484626.03215,
+      "usd_24h_vol": 2465160997.1336765
    },
-   "uniswap": {
-      "usd": 37.44,
-      "usd_market_cap": 19510834250.32726,
-      "usd_24h_vol": 1745249605.930918
-   },
-   "basic-attention-token": {
-      "usd": 1.56,
-      "usd_market_cap": 2315995889.953471,
-      "usd_24h_vol": 622016434.5692614
-   },
-   "ripple": {
-      "usd": 1.75,
-      "usd_market_cap": 80446920442.6471,
-      "usd_24h_vol": 13530656493.30865
-   },
-   "tron": {
-      "usd": 0.160098,
-      "usd_market_cap": 11410125913.358213,
-      "usd_24h_vol": 9673715095.03253
+   "vechain": {
+      "usd": 0.132089,
+      "usd_market_cap": 8836017098.726547,
+      "usd_24h_vol": 978879811.6281163
    },
    "ethereum": {
-      "usd": 2509.47,
-      "usd_market_cap": 290253869996.481,
-      "usd_24h_vol": 37692180516.65517
-   },
-   "polkadot": {
-      "usd": 43.18,
-      "usd_market_cap": 42573845627.573235,
-      "usd_24h_vol": 1838808539.7808406
-   },
-   "dogecoin": {
-      "usd": 0.236825,
-      "usd_market_cap": 30093947491.869648,
-      "usd_24h_vol": 26646915271.646114
-   },
-   "cardano": {
-      "usd": 1.47,
-      "usd_market_cap": 47182521912.693375,
-      "usd_24h_vol": 5210917074.014604
-   },
-   "chainlink": {
-      "usd": 41.82,
-      "usd_market_cap": 17571391587.381336,
-      "usd_24h_vol": 3618723314.8541365
-   },
-   "monero": {
-      "usd": 340.69,
-      "usd_market_cap": 6090518117.146183,
-      "usd_24h_vol": 723237958.5373968
+      "usd": 3271.28,
+      "usd_market_cap": 383385269315.73987,
+      "usd_24h_vol": 21916904785.323746
    },
    "tether": {
-      "usd": 1.0,
-      "usd_market_cap": 47031439447.516815,
-      "usd_24h_vol": 153407678943.725
+      "usd": 0.999042,
+      "usd_market_cap": 64896575469.677124,
+      "usd_24h_vol": 68060094828.80474
    },
-   "litecoin": {
-      "usd": 286.24,
-      "usd_market_cap": 19108827934.77663,
-      "usd_24h_vol": 9153436719.743164
+   "stellar": {
+      "usd": 0.374707,
+      "usd_market_cap": 8828460650.736103,
+      "usd_24h_vol": 594945022.6824309
    },
-   "binancecoin": {
-      "usd": 529.94,
-      "usd_market_cap": 81909605305.67409,
-      "usd_24h_vol": 5167534562.393817
+   "cosmos": {
+      "usd": 23.35,
+      "usd_market_cap": 6412659641.884987,
+      "usd_24h_vol": 1238458486.391228
+   },
+   "cardano": {
+      "usd": 2.44,
+      "usd_market_cap": 78554711889.39728,
+      "usd_24h_vol": 4842246463.712478
+   },
+   "bitcoin": {
+      "usd": 49019,
+      "usd_market_cap": 921210386168.9902,
+      "usd_24h_vol": 44325660180.83538
+   },
+   "tron": {
+      "usd": 0.088957,
+      "usd_market_cap": 6392072721.302878,
+      "usd_24h_vol": 1009586913.9075235
+   },
+   "solana": {
+      "usd": 75.53,
+      "usd_market_cap": 21788373853.76115,
+      "usd_24h_vol": 2009243877.5843523
+   },
+   "ripple": {
+      "usd": 1.23,
+      "usd_market_cap": 57360023681.19979,
+      "usd_24h_vol": 5992603522.68625
+   },
+   "monero": {
+      "usd": 281.76,
+      "usd_market_cap": 5066722861.840496,
+      "usd_24h_vol": 253569699.43891966
+   },
+   "usd-coin": {
+      "usd": 0.999022,
+      "usd_market_cap": 26954706183.03174,
+      "usd_24h_vol": 2069885209.492405
    },
    "bitcoin-cash": {
-      "usd": 912.02,
-      "usd_market_cap": 17060945233.40284,
-      "usd_24h_vol": 8985095729.492825
+      "usd": 683.34,
+      "usd_market_cap": 12901723569.161762,
+      "usd_24h_vol": 3127760738.228844
+   },
+   "basic-attention-token": {
+      "usd": 0.791383,
+      "usd_market_cap": 1179028706.203295,
+      "usd_24h_vol": 131832060.45701014
+   },
+   "neo": {
+      "usd": 56.17,
+      "usd_market_cap": 3961961119.8533254,
+      "usd_24h_vol": 466665135.8794334
+   },
+   "smooth-love-potion": {
+      "usd": 0.16154,
+      "usd_market_cap": 229413679.33855814,
+      "usd_24h_vol": 120966874.20229048
+   },
+   "dogecoin": {
+      "usd": 0.320961,
+      "usd_market_cap": 42029860694.108154,
+      "usd_24h_vol": 2835898692.707002
+   },
+   "litecoin": {
+      "usd": 181.66,
+      "usd_market_cap": 12126006170.570755,
+      "usd_24h_vol": 1756465038.3878949
+   },
+   "axie-infinity": {
+      "usd": 77.76,
+      "usd_market_cap": 4477759003.186364,
+      "usd_24h_vol": 1810261048.5828636
+   },
+   "theta-token": {
+      "usd": 7.4,
+      "usd_market_cap": 7431117601.011502,
+      "usd_24h_vol": 396175112.08141416
+   },
+   "polkadot": {
+      "usd": 28.45,
+      "usd_market_cap": 29118904510.090725,
+      "usd_24h_vol": 1765572223.8435597
+   },
+   "filecoin": {
+      "usd": 73.19,
+      "usd_market_cap": 7205118698.566902,
+      "usd_24h_vol": 631919457.7836618
+   },
+   "uniswap": {
+      "usd": 29.1,
+      "usd_market_cap": 15147098980.851292,
+      "usd_24h_vol": 447072638.9113848
+   },
+   "eos": {
+      "usd": 5.44,
+      "usd_market_cap": 5236835942.168601,
+      "usd_24h_vol": 1823022918.005577
+   },
+   "crypto-com-chain": {
+      "usd": 0.153189,
+      "usd_market_cap": 3868703679.779884,
+      "usd_24h_vol": 37328428.39846004
+   },
+   "chainlink": {
+      "usd": 28.66,
+      "usd_market_cap": 12874401021.540577,
+      "usd_24h_vol": 1436497805.810421
+   },
+   "iota": {
+      "usd": 1.08,
+      "usd_market_cap": 2999334897.4463086,
+      "usd_24h_vol": 69953975.0620429
+   },
+   "1inch": {
+      "usd": 3.44,
+      "usd_market_cap": 624688460.8291063,
+      "usd_24h_vol": 118595825.16917919
+   },
+   "pancakeswap-token": {
+      "usd": 23.75,
+      "usd_market_cap": 5050362674.226259,
+      "usd_24h_vol": 340823237.1465687
+   },
+   "terra-luna": {
+      "usd": 28.36,
+      "usd_market_cap": 11527577058.782894,
+      "usd_24h_vol": 968956388.7567816
+   },
+   "tokocrypto": {
+      "usd": 2.27,
+      "usd_market_cap": 170278261.33548427,
+      "usd_24h_vol": 30844607.592040773
+   },
+   "klay-token": {
+      "usd": 1.88,
+      "usd_market_cap": 4684381352.741212,
+      "usd_24h_vol": 60937285.540276006
+   },
+   "helmet-insure": {
+      "usd": 0.392002,
+      "usd_market_cap": 14923048.867790915,
+      "usd_24h_vol": 1017453.5301376216
+   },
+   "wrapped-bitcoin": {
+      "usd": 48967,
+      "usd_market_cap": 9520230453.844938,
+      "usd_24h_vol": 331725396.85619265
+   },
+   "belt": {
+      "usd": 17.43,
+      "usd_market_cap": 83549076.67516804,
+      "usd_24h_vol": 1716060.6446620466
+   },
+   "ubix-network": {
+      "usd": 0.00091067,
+      "usd_market_cap": 0.0,
+      "usd_24h_vol": 2954414.7923835944
+   },
+   "bitcoin-cash-sv": {
+      "usd": 166.97,
+      "usd_market_cap": 3141679642.318505,
+      "usd_24h_vol": 391821368.1986317
    }
 }

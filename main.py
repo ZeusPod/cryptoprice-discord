@@ -1,6 +1,9 @@
+from os import name
 import threading
 import discord
 from discord import embeds
+from discord import client
+from discord import role
 from discord.colour import Color
 from discord.ext import commands
 from discord.utils import async_all
@@ -9,14 +12,16 @@ import json
 import datetime
 import time 
 from threading import Timer
+from discord import utils
+from discord.utils import get
 
 
-
-
+#metodo para obtener los precios
 def getprice():
     cg = CoinGeckoAPI()
-    coinsprice = cg.get_price(ids='bitcoin, ethereum, dogecoin, tron, chainlink, tether, basic-attention-token, ripple, cardano, uniswap, binancecoin, monero, polkadot, litecoin, bitcoin-cash, pancakeswap-token,helmet-insure,1inch,belt,tokocrypto, stellar,ubix-network, vechain,theta-token, filecoin, usd-coin, wrapped-bitcoin, eos, bitcoin-cash-sv, iota, klay-token, solana, crypto-com-chain, cosmos, terra-luna, neo', vs_currencies='usd', include_market_cap='true', include_24hr_vol='true')
+    coinsprice = cg.get_price(ids='bitcoin, ethereum, dogecoin, tron, chainlink, tether, basic-attention-token, ripple, cardano, uniswap, binancecoin, monero, polkadot, litecoin, bitcoin-cash, pancakeswap-token,helmet-insure,1inch,belt,tokocrypto, stellar,ubix-network, vechain,theta-token, filecoin, usd-coin, wrapped-bitcoin, eos, bitcoin-cash-sv, iota, klay-token, solana, crypto-com-chain, cosmos, terra-luna, neo, smooth-love-potion, axie-infinity ', vs_currencies='usd', include_market_cap='true', include_24hr_vol='true')
     print(coinsprice)
+
     #Save the data in a Json file 
     with open ('data.json' ,'w') as file:
         json.dump(coinsprice, file, indent = 3)
@@ -32,7 +37,7 @@ def getprice():
 def printtest():
     precios = getprice()
     print(precios)
-    threading.Timer(8,printtest)
+    threading.Timer(10,printtest)
 
 imprime = printtest()
 
@@ -41,10 +46,21 @@ imprime = printtest()
 
 bot = commands.Bot(command_prefix='>')
 
-#events
+
+
+
+#events que nos indica cuando el bot esta activo via consola
 @bot.event
 async def on_ready():
     print('Bot activo')
+
+#comando para agregar el rol automatico
+@bot.event
+async def on_member_join(ctx):
+    autorole = discord.utils.get(ctx.guild.roles, name="cryptouser")
+    await ctx.add_roles(autorole)
+
+
 
 #comandos para solicitar precios
 @bot.command()
@@ -839,7 +855,47 @@ async def precioneo(ctx):
        embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/480/small/NEO_512_512.png?1594357361")
        await ctx.send(embed=embed)
 
+#precio slp
+@bot.command()
+async def precioslp(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #slp  from json
+       slpcoin = obj['smooth-love-potion']
+       slpprice = slpcoin['usd']
+       slpmktcap = slpcoin['usd_market_cap']
+       vol_hrs= slpcoin['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de SLP {slpprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.purple())
+       embed.add_field(name="**Market cap**", value = slpmktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morales**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/10366/small/SLP.png?1578640057")
+       await ctx.send(embed=embed)
 
+#precio axs
+@bot.command()
+async def precioaxs(ctx):
+       #read json file 
+       coinsfile = open ('data.json', 'r') 
+       jsondata = coinsfile.read()
+       #parser
+       obj = json.loads(jsondata)
+       #axs  from json
+       axscoin = obj['axie-infinity']
+       axsprice = axscoin['usd']
+       axsmktcap = axscoin['usd_market_cap']
+       vol_hrs= axscoin['usd_24h_vol']
+       embed = discord.Embed(title = f"{ctx.guild.name}", description=f"**Precio de AXS {axsprice} $**", timestamp=datetime.datetime.utcnow(), color=discord.Color.dark_blue())
+       embed.add_field(name="**Market cap**", value = axsmktcap)
+       embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
+       embed.add_field(name="Font", value="Coingecko")
+       embed.add_field(name="Developer", value="**Jose Morris**")
+       embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/13029/small/axie_infinity_logo.png?1604471082")
+       await ctx.send(embed=embed)
 
 
 bot.run('ODMxMTg2MjQ3OTI0ODQyNTI3.YHRkhA.jf-u-GFzImrYlD8o-yzF6IJD7sU')
