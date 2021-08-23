@@ -14,6 +14,8 @@ import time
 from threading import Timer
 from discord import utils
 from discord.utils import get
+from dotenv import load_dotenv
+import os
 
 
 #metodo para obtener los precios
@@ -898,4 +900,6 @@ async def precioaxs(ctx):
        await ctx.send(embed=embed)
 
 
-bot.run('ODMxMTg2MjQ3OTI0ODQyNTI3.YHRkhA.jf-u-GFzImrYlD8o-yzF6IJD7sU')
+load_dotenv()
+
+bot.run(os.getenv('KEY'))
