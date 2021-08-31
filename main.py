@@ -68,12 +68,10 @@ async def on_member_join(ctx):
 @bot.command()
 async def comandos(ctx):
     embed = discord.Embed(title = f"{ctx.guild.name}", description="comandos para consultar las cotizaciones", timestamp=datetime.
-    datetime.utcnow(), color=discord.Color.orange())
-    embed.add_field(name="Consulta BTC", value=">preciobtc")
-    embed.add_field(name="Consulta ETH", value=">precioeth")
-    embed.add_field(name="Consulta DOG", value=">preciodoge")
-    embed.add_field(name="Consulta TRX", value=">preciotrx")
-    embed.add_field(name="Consulta Link", value=">preciochainlink")
+    datetime.utcnow(), color=discord.Color.red())
+    embed.add_field(name="Prefijo", value="el prefijo a usar es  **>** debe estar siempre delante de cualquier comando a consultarle a nuestro bot", inline=False)
+    embed.add_field(name=">precio+(nombre de la moneda)", value="Muestra los precios de los monedas", inline=False)
+    embed.add_field(name="Para consultar el precio de una coin el comando debe ser de la siguiente manera", value=">preciobtc")
     await ctx.send(embed=embed)
 
 #command BTC price
@@ -895,7 +893,7 @@ async def precioaxs(ctx):
        embed.add_field(name="**Market cap**", value = axsmktcap)
        embed.add_field(name="**Vol in 24hrs**", value =vol_hrs)
        embed.add_field(name="Font", value="Coingecko")
-       embed.add_field(name="Developer", value="**Jose Morris**")
+       embed.add_field(name="Developer", value="**Jose Morales**")
        embed.set_thumbnail(url="https://assets.coingecko.com/coins/images/13029/small/axie_infinity_logo.png?1604471082")
        await ctx.send(embed=embed)
 
