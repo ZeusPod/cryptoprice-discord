@@ -33,7 +33,7 @@ def getprice():
     jsondata = coinsfile.read()
     #parser
     obj = json.loads(jsondata)
-    threading.Timer(60,getprice).start()
+    threading.Timer(10,getprice).start()
 
 
 def printtest():
@@ -46,7 +46,9 @@ imprime = printtest()
 
 #Discord bot 
 
-bot = commands.Bot(command_prefix='>')
+intents = discord.Intents(messages=True, guilds = True, reactions = True, members = True, bans = True)
+
+bot = commands.Bot(command_prefix='>', intents=intents)
 
 
 
