@@ -33,13 +33,13 @@ def getprice():
     jsondata = coinsfile.read()
     #parser
     obj = json.loads(jsondata)
-    threading.Timer(10,getprice).start()
+    threading.Timer(60,getprice).start()
 
 
 def printtest():
     precios = getprice()
     print(precios)
-    threading.Timer(10,printtest)
+    threading.Timer(60,printtest)
 
 imprime = printtest()
 
